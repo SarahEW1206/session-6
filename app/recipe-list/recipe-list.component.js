@@ -5,7 +5,7 @@ angular.module('recipeApp').component('recipeList', {
             {
                 name: 'recipe1309',
                 title: 'Lasagna',
-                date: '2013-09-01',
+                date: '2016-09-01',
                 description: 'Lasagna noodles piled high and layered full of three kinds of cheese to go along with the perfect blend of meaty and zesty, tomato pasta sauce all loaded with herbs.',
                 image: 'lasagne.png'
             },
@@ -34,6 +34,7 @@ angular.module('recipeApp').component('recipeList', {
                 image: 'hamburger.png'
             }
         ]
+        this.orderProp = 'date';
     }
 
 });
