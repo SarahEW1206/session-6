@@ -1,8 +1,12 @@
 angular.module('recipeApp').component('recipeDetail', {
-    template: '<p>Detail view for {{ $ctrl.recipeId }}</p>',
-    controller: ['$routeParams',
-        function RecipeDetailController($routeParams) {
-            this.recipeId = $routeParams.recipeId;
+    templateUrl: 'recipe-detail/recipe-detail.template.html',
+    controller: ['$http', '$routeParams',
+        function RecipeDetailController($http, $routeParams) {
+            var self = this;
+
+            $http.get('data/' + $routeParams.recipeId + '.json').then(function (response) {
+                self.recipe = response.data;
+            });
         }
     ]
 });
