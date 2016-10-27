@@ -22,9 +22,24 @@
     }
 }
 
+.widescreen {
+    @media (min-width: $break-one) {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    }
+}
+
 .recipe-detail-image {
     width: 100%;
     margin-top: 1rem;
+
+    @media (min-width: $break-one) {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    
+    }
 }
 .recipe-thumbs {
     width: 100%;
@@ -34,4 +49,38 @@
         width: 100%;
         padding: 0 0.5rem;
     }
+
+    @media (min-width: $break-one) {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    }
+
+    li {
+        @media (min-width: $break-one) {
+        width: 50%;
+                } 
+    }
+
+    img {
+        @media (min-width: $break-one) {
+         padding: 0 0 0.5rem 0.5rem;
+        }
+    }
+}
+
+
+
+
+
+h3 {
+    margin-top: 2em;
+}
+
+.ingredients {
+    line-height: 1.5rem;
+}
+
+.directions li{
+    padding-top: 1.5rem;
 }
