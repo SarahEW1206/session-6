@@ -2,7 +2,14 @@
 
 	<h2>{{ $ctrl.recipe.title }}</h2>
 
-	<img ng-src="{{ $ctrl.recipe.mainImageUrl }}" />
+	<img ng-src="img/home/{{$ctrl.mainImageUrl}}" class="recipe-detail-image" />
+
+	<ul class="recipe-thumbs">
+		<li ng-repeat="img in $ctrl.recipe.images">
+			<img ng-src="img/home/{{img}}" ng-click="$ctrl.setImage(img)" />
+		</li>
+	</ul>
+
 
 	<p>{{ $ctrl.recipe.description }}</p>
 
@@ -12,5 +19,14 @@
 			{{ ingredient }}
 		</li>
 	</ul>
+
+	<h3>Directions</h3>
+	<ul class="directions">
+		<li ng-repeat="step in $ctrl.recipe.directions">
+			{{ step }}
+		</li>
+	</ul>
+
+
 
 </div>
