@@ -1,0 +1,45 @@
+.page.ng-leave  { z-index:9999; }
+.page.ng-enter  { z-index:8888; }
+
+.page-home      { 
+    background-color: #F09090;
+    padding: 2em;
+    }
+.page-detail     { 
+    background:#E59400; 
+    padding: 2em;
+    }
+
+.page-home.ng-enter         {  
+    animation: fadeIn 5s both ease-in;  
+}
+
+.page-home.ng-leave         {
+    animation: slideOutLeft 5s both ease-out;
+}
+
+.page-detail.ng-enter         {  
+    animation: slideInRight 5s ease-in;  
+}
+
+.page-detail.ng-leave         {
+    animation: slideOutLeft 5s both ease-out;
+}
+
+/* entering animations - slide in right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from    { opacity: 0.2; }
+    to      { opacity: 1.0; }
+}
+
+/* exiting animations - slide in right */
+@keyframes slideOutLeft {
+    from    { transform:translateX(0); }
+    to      { transform: translateX(-100%); }
+}
+
