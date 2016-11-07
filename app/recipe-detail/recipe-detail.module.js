@@ -1,3 +1,3 @@
 angular.module('recipeDetail', [
-    'ngRoute'
-]);
+    'ngRoute',
+    'ngAnimate']);

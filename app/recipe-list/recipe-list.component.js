@@ -4,6 +4,10 @@ angular.module('recipeApp').component('recipeList', {
         var self = this;
         self.orderProp = "date";
 
+        self.pageClass = function pageClass() {
+            self.pageClass = "page-home";
+        };
+
         $http.get('data/recipes.json').then(function (response) {
             self.recipes = response.data;
         });

@@ -210,6 +210,14 @@ img {
   outline: 1px solid rgba(255, 0, 0, 0.5);
 }
 
+.page-home {
+  background: #00D0BC;
+}
+
+.page-detail {
+  background: #E59400;
+}
+
 .recipes-list {
   display: flex;
   flex-wrap: wrap;
@@ -264,14 +272,12 @@ img {
 }
 
 .recipe-thumbs {
-  width: 100%;
-  margin: 1rem 0;
   display: flex;
+  margin-top: 1rem;
 }
 
 .recipe-thumbs img {
   width: 100%;
-  padding: 0 0.5rem;
 }
 
 @media (min-width: 46.25rem) {
@@ -282,15 +288,14 @@ img {
   }
 }
 
-@media (min-width: 46.25rem) {
-  .recipe-thumbs li {
-    width: 50%;
-  }
+.recipe-thumbs li {
+  margin-right: .5rem;
 }
 
 @media (min-width: 46.25rem) {
-  .recipe-thumbs img {
-    padding: 0 0 0.5rem 0.5rem;
+  .recipe-thumbs li {
+    width: 45%;
+    margin: 0  0 0 .25rem;
   }
 }
 
@@ -299,11 +304,84 @@ h3 {
 }
 
 .ingredients {
-  line-height: 1.5rem;
+  line-height: 1.2rem;
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+
+.ingredients li {
+  margin-bottom: .5rem;
 }
 
 .directions li {
   padding-top: 1.5rem;
+}
+
+.container:hover .image {
+  transform: scale(1.3);
+}
+
+.container {
+  overflow: hidden;
+}
+
+.image {
+  transition: all 0.7s ease;
+}
+
+.fade.ng-leave {
+  animation: 1s disappear;
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.fade.ng-enter.added {
+  animation: 3s appear;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.addIng {
+  cursor: pointer;
+  margin-right: 2em;
+  font-size: .8em;
+  padding: .5em;
+  background-color: #f0dfb4;
+  border-radius: 50%;
+  transition: all 3s;
+}
+
+.addIng:hover {
+  background-color: #333;
+  color: white;
+}
+
+.addedIng {
+  cursor: none;
+  margin-right: 2em;
+  font-size: .8em;
+  padding: .5em;
+  background-color: #600;
+  color: #f0dfb4;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

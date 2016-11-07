@@ -42,12 +42,12 @@
     }
 }
 .recipe-thumbs {
-    width: 100%;
-    margin: 1rem 0;
-    display: flex;
+display: flex;
+margin-top: 1rem;
+    
     img {
         width: 100%;
-        padding: 0 0.5rem;
+    
     }
 
     @media (min-width: $break-one) {
@@ -57,30 +57,102 @@
     }
 
     li {
+    margin-right: .5rem;
         @media (min-width: $break-one) {
-        width: 50%;
-                } 
+        width: 45%;
+        margin: 0  0 0 .25rem;
+        }              
     }
 
-    img {
-        @media (min-width: $break-one) {
-         padding: 0 0 0.5rem 0.5rem;
-        }
-    }
 }
-
-
-
-
 
 h3 {
     margin-top: 2em;
 }
 
 .ingredients {
-    line-height: 1.5rem;
+    line-height: 1.2rem;
+    margin-top: .5rem;
+    font-size: .8rem;
+
+    li {
+        margin-bottom: .5rem;
+
+    }
 }
 
 .directions li{
     padding-top: 1.5rem;
+}
+
+.container:hover .image {
+transform:scale(1.3);
+}
+.container {
+overflow:hidden;
+}
+.image {
+transition: all 0.7s ease;
+}
+
+
+.fade.ng-leave {
+    animation: 1s disappear;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+        
+    }
+    to {
+        opacity: 0;
+    }
+
+}
+
+.fade.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.fade.ng-enter.added {
+    animation: 3s appear;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+.addIng {
+    cursor: pointer;
+    margin-right: 2em;
+    font-size: .8em;
+    padding: .5em;
+    background-color: $tan;
+    border-radius: 50%; 
+    transition: all 3s; 
+
+}
+
+.addIng:hover {
+    background-color: $dark-gray;
+    color: white;
+}
+
+
+.addedIng {
+   cursor: none;
+    margin-right: 2em;
+    font-size: .8em;
+    padding: .5em;
+    background-color: $reddish;
+    color: $tan;
+    border-radius: 50%;   
 }
