@@ -35,56 +35,46 @@ header {
   }
 }
 
-.info {
-  width: 100%;
-  background-color: #f0dfb4;
-  padding: .5rem;
-  border: 1px solid #600;
-  font-size: 0.875rem;
-  margin-right: 2em;
-  margin-bottom: 1em;
-  float: left;
-}
+/*.info {
+	width: 100%;
+	background-color: $tan;
+	padding: .5rem;
+	border: 1px solid $reddish;
+	font-size: 0.875rem;
+	margin-right: 2em;
+	margin-bottom: 1em;
+	float: left;
 
-.info th {
-  text-align: left;
-}
+	th {
+		text-align: left;
+	}
 
-.info ul {
-  float: left;
-  width: 40%;
-}
+	ul {
+		float: left;
+		width: 40%;
+		@media (min-width: $break-one) {
+			margin-top: 1em;
+			width: 100%;
+		}
+	}
 
-@media (min-width: 46.25rem) {
-  .info ul {
-    margin-top: 1em;
-    width: 100%;
-  }
-}
+	table {
+		float: right;
+		width: 40%;
+		@media (min-width: $break-one) {
+			float: none;
+			width: 100%;
+		}
+	}
 
-.info table {
-  float: right;
-  width: 40%;
-}
-
-@media (min-width: 46.25rem) {
-  .info table {
-    float: none;
-    width: 100%;
-  }
-}
-
-@media (min-width: 46.25rem) {
-  .info {
-    position: absolute;
-    top: 0;
-    left: -12rem;
-    width: 11rem;
-  }
-}
-
+	@media (min-width: $break-one) {
+		position: absolute;
+		top: 0;
+		left: -12rem;
+		width: 11rem;
+	}
+}*/
 article {
-  margin: 0 1em 0 1em;
   position: relative;
 }
 
@@ -210,6 +200,11 @@ img {
   outline: 1px solid rgba(255, 0, 0, 0.5);
 }
 
+.page {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .page.ng-leave {
   z-index: 9999;
 }
@@ -221,30 +216,32 @@ img {
 .page-home {
   background-color: #F09090;
   padding: 2em;
+  position: absolute;
 }
 
 .page-detail {
   background: #E59400;
   padding: 2em;
-}
-
-.page-home.ng-enter {
-  animation: fadeIn 5s both ease-in;
+  position: absolute;
 }
 
 .page-home.ng-leave {
-  animation: slideOutLeft 5s both ease-out;
+  animation: slideOutLeft 1s both ease-in, fadeOut 1s;
 }
 
-.page-detail.ng-enter {
-  animation: slideInRight 5s ease-in;
+.page-home.ng-enter {
+  animation: slideInRight 1s both ease-in, fadeIn 1s;
 }
 
 .page-detail.ng-leave {
-  animation: slideOutLeft 5s both ease-out;
+  animation: slideOutLeft 1s both ease-in, fadeOut 1s;
 }
 
-/* entering animations - slide in right */
+.page-detail.ng-enter {
+  animation: slideInRight 1s both ease-in, fadeIn 1s;
+}
+
+/* entering animations NOT WORKING - slide in right or fade in */
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
@@ -256,20 +253,29 @@ img {
 
 @keyframes fadeIn {
   from {
-    opacity: 0.2;
+    opacity: 0.0;
   }
   to {
     opacity: 1.0;
   }
 }
 
-/* exiting animations - slide in right */
+/* exiting animations WORKING - slide out left */
 @keyframes slideOutLeft {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
   }
 }
 
